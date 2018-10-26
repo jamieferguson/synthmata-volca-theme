@@ -243,7 +243,7 @@ a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.controlitemgroup .controlitemgroup input[type=text],
+.controlitemgroup input[type=text],
 .controlitemgroup textarea {
   width: 100%;
   font-family: 'Titillium Web', sans-serif;
@@ -262,6 +262,20 @@ a {
 
 .controlitemgroup #random_newpatch {
   background-color: #ffa9ba;
+}
+
+.controlitemgroup input[type=text].sysexParameterText {
+  font-family: 'DSEG7Classic-Italic';
+  color: #ec4863;
+  background: rgba(0, 0, 0, 0.85);
+  background: radial-gradient(ellipse at center, #30050c 0%, rgba(0, 0, 0, 0.8) 80%);
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 10px #ec4863;
+  width: 180px;
+  font-size: 20px;
+  display: block;
+  margin: 0 auto;
 }
 
 #saveLoadShare input {
