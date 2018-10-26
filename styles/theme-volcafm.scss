@@ -272,6 +272,13 @@ a {
 
 #midiSetupForm {
 	text-align: center;
+	label {
+		// @media (min-width: 900px) {
+		// 	display: inline-block;
+		// 	width: 47%;
+		// 	margin-right: 2%;
+		// }
+	}
 	select,
 	input {
 		margin: 0 0 15px;
