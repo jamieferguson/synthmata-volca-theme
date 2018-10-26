@@ -186,7 +186,7 @@ a {
   display: inline-block;
   color: #211f1d;
   font-family: 'Titillium Web', sans-serif;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 16px;
   outline: none;
   border: none;
@@ -194,11 +194,11 @@ a {
 }
 
 .controlitemgroup button {
-  color: #211f1d;
+  color: rgba(33, 31, 29, 0.8);
   font-family: inherit;
   background-color: #42cbc7;
-  border: 2px solid #ddd;
-  border-bottom-color: #999;
+  border: 2px solid #eee;
+  border-bottom-color: #bbb;
   padding: 10px;
   border-radius: 3px;
   font-size: 90%;
@@ -206,8 +206,9 @@ a {
   line-height: 1;
   width: 100%;
   margin-bottom: 10px;
-  -webkit-box-shadow: 0 4px 2px black;
-          box-shadow: 0 4px 2px black;
+  -webkit-box-shadow: 0 4px 2px black, inset 0 15px 15px rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 2px black, inset 0 15px 15px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .controlitemgroup .controlitemgroup input[type=text],
@@ -231,12 +232,37 @@ a {
   background-color: #ffa9ba;
 }
 
+#saveLoadShare input {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: black;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 900px) {
+  #saveLoadShare button {
+    display: inline-block;
+    width: 47%;
+    margin-right: 2%;
+  }
+}
+
 .controller {
   margin-bottom: 15px;
 }
 
 #midiSetupForm {
   text-align: center;
+}
+
+#midiSetupForm select,
+#midiSetupForm input {
+  margin: 0 0 15px;
+}
+
+#midiSetupForm select {
+  margin-top: 10px;
 }
 
 /*slider styling*/
@@ -264,10 +290,10 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 input[type=range]::-webkit-slider-thumb {
-  -webkit-box-shadow: 0 4px 2px black;
-          box-shadow: 0 4px 2px black;
-  border: 1px solid #444;
-  border-top-color: #333;
+  -webkit-box-shadow: 0 8px 4px rgba(0, 0, 0, 0.8), 0 0 0 2px black;
+          box-shadow: 0 8px 4px rgba(0, 0, 0, 0.8), 0 0 0 2px black;
+  border: 1px solid #333;
+  border-top-color: #222;
   border-bottom-color: #666;
   border-left-width: 4px;
   border-right-width: 4px;
@@ -297,11 +323,15 @@ input[type=range]::-moz-range-track {
 }
 
 input[type=range]::-moz-range-thumb {
-  box-shadow: 1.1px 1.1px 6.5px #000000, 0px 0px 1.1px #0d0d0d;
-  border: 1.3px solid #000000;
-  height: 19px;
+  box-shadow: 0 4px 2px black;
+  border: 1px solid #444;
+  border-top-color: #333;
+  border-bottom-color: #666;
+  border-left-width: 4px;
+  border-right-width: 4px;
+  height: 30px;
   width: 12px;
-  border-radius: 5px;
+  border-radius: 1px;
   background: #42cbc7;
   cursor: pointer;
 }

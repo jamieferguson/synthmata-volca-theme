@@ -207,7 +207,7 @@ a {
 		display: inline-block;
 		color: $main-bg;
 		font-family: 'Titillium Web', sans-serif;
-		background-color: rgba(white, .5);
+		background-color: $text-color-ui;
 		font-size: 16px;
 		// text-transform: uppercase;
 		outline: none;
@@ -215,11 +215,11 @@ a {
 		margin: 5px auto 0;
 	}
 	button {
-		color: $main-bg;
+		color: rgba($main-bg, .8);
 		font-family: inherit;
 		background-color: $slider-teal;
-		border: 2px solid #ddd;
-		border-bottom-color: #999;
+		border: 2px solid #eee;
+		border-bottom-color: #bbb;
 		padding: 10px;
 		border-radius: 3px;
 		font-size: 90%;
@@ -227,7 +227,8 @@ a {
 		line-height: 1;
 		width: 100%;
 		margin-bottom: 10px;
-		box-shadow: 0 4px 2px black;
+		box-shadow: 0 4px 2px black, inset 0 15px 15px rgba(white, .1);
+		text-shadow: 0 -1px 0 rgba(black, .3), 0 1px 0 rgba(white, .3);
 	}
 	.controlitemgroup input[type=text],
 	textarea {
@@ -248,12 +249,36 @@ a {
 	}
 }
 
+#saveLoadShare {
+	input {
+		margin-bottom: 15px;
+		padding: 15px;
+		background: black;
+		width: 100%;
+		border: 1px solid rgba(white, .2);
+	}
+	button {
+		@media (min-width: 900px) {
+			display: inline-block;
+			width: 47%;
+			margin-right: 2%;
+		}
+	}
+}
+
 .controller {
 	margin-bottom: 15px;
 }
 
 #midiSetupForm {
 	text-align: center;
+	select,
+	input {
+		margin: 0 0 15px;
+	}
+	select {
+		margin-top: 10px;
+	}
 }
 
 /*slider styling*/
@@ -275,9 +300,9 @@ input[type=range]::-webkit-slider-runnable-track {
 	transition: box-shadow .25s ease;
 }
 input[type=range]::-webkit-slider-thumb {
-	box-shadow: 0 4px 2px black;
-	border: 1px solid #444;
-	border-top-color: #333;
+	box-shadow: 0 8px 4px rgba(black, .8), 0 0 0 2px black;
+	border: 1px solid #333;
+	border-top-color: #222;
 	border-bottom-color: #666;
 	border-left-width: 4px;
 	border-right-width: 4px;
@@ -303,11 +328,15 @@ input[type=range]::-moz-range-track {
 	border: 0px solid #010101;
 }
 input[type=range]::-moz-range-thumb {
-	box-shadow: 1.1px 1.1px 6.5px #000000, 0px 0px 1.1px #0d0d0d;
-	border: 1.3px solid #000000;
-	height: 19px;
+	box-shadow: 0 4px 2px black;
+	border: 1px solid #444;
+	border-top-color: #333;
+	border-bottom-color: #666;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	height: 30px;
 	width: 12px;
-	border-radius: 5px;
+	border-radius: 1px;
 	background: $slider-teal;
 	cursor: pointer;
 }
