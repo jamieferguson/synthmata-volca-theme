@@ -28,6 +28,7 @@ a {
   line-height: 1;
   margin-top: 5vh;
   text-align: right;
+  max-width: 1600px;
 }
 
 #title-byline {
@@ -38,6 +39,7 @@ a {
   text-align: right;
   padding: 0;
   text-align: right;
+  max-width: 1600px;
 }
 
 #title-byline a {
@@ -50,12 +52,14 @@ a {
   font-size: 180%;
   font-weight: normal;
   text-align: right;
+  max-width: 1600px;
 }
 
 #main-content {
   margin-bottom: 5vh;
   font-size: 100%;
   text-align: center;
+  max-width: 1600px;
 }
 
 #midiSetup,
