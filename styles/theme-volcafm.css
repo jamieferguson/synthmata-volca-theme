@@ -87,6 +87,7 @@ a {
 .controlpanel {
   background-color: transparent;
   border: none;
+  margin: 2vh 0;
 }
 
 .controlpanel h2 {
@@ -120,7 +121,27 @@ a {
 
 .controlpanel:first-child {
   color: #e2cc94;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: visible;
+  padding: 20px 0 40px;
+}
+
+.controlpanel:first-child:before, .controlpanel:first-child:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 99999px;
+  bottom: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.controlpanel:first-child:before {
+  left: 100%;
+}
+
+.controlpanel:first-child:after {
+  right: 100%;
 }
 
 .controlpanel:first-child h2:before, .controlpanel:first-child h2:after {
@@ -367,7 +388,7 @@ input[type=range]::-moz-range-thumb {
   font-family: 'DSEG7Classic-Italic';
   color: #ec4863;
   background: rgba(0, 0, 0, 0.85);
-  background: radial-gradient(ellipse at center, #5e0a18 0%, rgba(0, 0, 0, 0.6) 80%);
+  background: radial-gradient(ellipse at center, #5e0a18 0%, rgba(0, 0, 0, 0.8) 80%);
   padding: 30px;
   border: 2px solid rgba(255, 255, 255, 0.2);
   text-shadow: 0 1px 10px #ec4863;
