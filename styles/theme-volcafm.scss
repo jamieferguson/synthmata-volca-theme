@@ -6,10 +6,17 @@ $slider-teal: #42cbc7;
 $function-pink: #ffa9ba;
 $edit-brown: #c39660;
 
+@font-face {
+	font-family: "DSEG7Classic-Italic";
+	src: url("../fonts/DSEG7Classic-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	background-color: $main-bg;
 	background: linear-gradient(135deg, lighten($main-bg, 2%) 0%, darken($main-bg, 3%) 100%);
-	border: 10px solid black;
+	border: 15px solid black;
 	margin: 0;
 	box-shadow: inset 0 1px 5px 1px rgba(white, .1);
 	color: $text-color-ui;
@@ -354,6 +361,17 @@ input[type=range]::-moz-range-thumb {
 	canvas {
 		left: 0;
 	}
+}
+
+#valueDisplay {
+	font-family: 'DSEG7Classic-Italic';
+	color: #ec4863;
+	background: rgba(black, .85);
+	padding: 30px;
+	border: 2px solid rgba(white, .2);
+	text-shadow: 0 1px 10px #ec4863;
+	opacity: 1;
+	top: -2px;
 }
 
 .bolt {
