@@ -356,6 +356,7 @@ input[type=range]::-moz-range-thumb {
   font-family: 'DSEG7Classic-Italic';
   color: #ec4863;
   background: rgba(0, 0, 0, 0.85);
+  background: radial-gradient(ellipse at center, #5e0a18 0%, rgba(0, 0, 0, 0.6) 80%);
   padding: 30px;
   border: 2px solid rgba(255, 255, 255, 0.2);
   text-shadow: 0 1px 10px #ec4863;
