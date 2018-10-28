@@ -14,10 +14,18 @@ body {
           box-shadow: inset 0 1px 5px 1px rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.8);
   font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+@media (min-width: 1250px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 * {
@@ -26,6 +34,12 @@ body {
 
 a {
   color: #e2cc94;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: underline;
+  color: #d7b96c;
 }
 
 #title-head {
@@ -37,6 +51,7 @@ a {
   margin-top: 5vh;
   text-align: right;
   max-width: 1600px;
+  width: 85%;
 }
 
 #title-byline {
@@ -47,6 +62,7 @@ a {
   text-align: right;
   padding: 0;
   text-align: right;
+  width: 85%;
   max-width: 1600px;
   margin-top: -15px;
 }
@@ -55,12 +71,18 @@ a {
   color: #e2cc94;
 }
 
+#title-byline a:hover, #title-byline a:active, #title-byline a:focus {
+  text-decoration: underline;
+  color: #d7b96c;
+}
+
 #subtitle-head {
   color: rgba(255, 255, 255, 0.4);
   font-family: 'Titillium Web', sans-serif;
   font-size: 180%;
   font-weight: 300;
   text-align: right;
+  width: 85%;
   max-width: 1600px;
   line-height: 1.1;
   margin-top: 2vh;
@@ -71,6 +93,7 @@ a {
   font-size: 100%;
   text-align: center;
   max-width: 1600px;
+  width: 95%;
 }
 
 #midiSetup,
@@ -84,10 +107,20 @@ a {
   padding: 0;
 }
 
+@media (min-width: 1000px) {
+  #midiSetup,
+  #saveLoadShare {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
 .controlpanel {
   background-color: transparent;
   border: none;
   margin: 2vh 0;
+  padding: 0;
 }
 
 .controlpanel h2 {
@@ -123,25 +156,7 @@ a {
   color: #e2cc94;
   background-color: rgba(0, 0, 0, 0.4);
   overflow: visible;
-  padding: 20px 0 40px;
-}
-
-.controlpanel:first-child:before, .controlpanel:first-child:after {
-  content: '';
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  width: 99999px;
-  bottom: 100%;
-  height: 100%;
-  top: 0;
-}
-
-.controlpanel:first-child:before {
-  left: 100%;
-}
-
-.controlpanel:first-child:after {
-  right: 100%;
+  padding: 20px 20px 40px;
 }
 
 .controlpanel:first-child h2:before, .controlpanel:first-child h2:after {
@@ -177,13 +192,17 @@ a {
 .controlitemgroup {
   background-color: transparent;
   border: none;
-  padding: 20px;
+  padding: 1vw;
   margin: 0;
   position: relative;
 }
 
-.controlitemgroup:not(:last-child) {
-  margin-right: 20px;
+@media (min-width: 1400px) {
+  .controlitemgroup {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 .controlitemgroup:not(:last-child):after {
@@ -192,7 +211,7 @@ a {
   position: absolute;
   top: 20px;
   bottom: 20px;
-  right: -11px;
+  right: -1px;
   width: 0;
   border-right: 2px solid rgba(255, 255, 255, 0.8);
 }
@@ -213,7 +232,7 @@ a {
 }
 
 .controlitemgroup select {
-  width: 100%;
+  width: 90%;
   display: inline-block;
   color: #211f1d;
   font-family: 'Titillium Web', sans-serif;
@@ -235,8 +254,8 @@ a {
   font-size: 90%;
   text-transform: uppercase;
   line-height: 1;
-  width: 100%;
-  margin-bottom: 10px;
+  width: 90%;
+  margin: 0 auto 10px;
   -webkit-box-shadow: 0 4px 2px black, inset 0 15px 15px rgba(255, 255, 255, 0.1);
           box-shadow: 0 4px 2px black, inset 0 15px 15px rgba(255, 255, 255, 0.1);
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -304,11 +323,63 @@ a {
 
 #midiSetupForm select,
 #midiSetupForm input {
-  margin: 0 0 15px;
+  margin: 0 auto 15px;
 }
 
 #midiSetupForm select {
   margin-top: 10px;
+}
+
+.controlpanel-operators input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+.controlpanel-operators label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 70px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  border-radius: 40px;
+  position: relative;
+  margin: -20px auto 0;
+  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.2);
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+.controlpanel-operators label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.5)), color-stop(20%, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.3) 100%);
+  border-radius: 30px;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+  -webkit-box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.controlpanel-operators input:checked + label {
+  background: #42cbc7;
+  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.controlpanel-operators input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  background: white;
 }
 
 /*slider styling*/
@@ -318,7 +389,7 @@ a {
 
 input[type=range] {
   -webkit-appearance: none;
-  width: 95%;
+  width: 90%;
   display: inline-block;
 }
 
@@ -391,7 +462,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .envelopeCanvasContainer {
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .envelopeCanvasContainer canvas {
@@ -408,6 +480,21 @@ input[type=range]::-moz-range-thumb {
   text-shadow: 0 1px 10px #ec4863;
   opacity: 1;
   top: -2px;
+  height: 140px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 280px;
+}
+
+#theme-credit {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 12px;
+  padding: 10px 20px;
+  margin-bottom: -2px;
+  color: rgba(255, 255, 255, 0.6);
+  background: black;
+  border-radius: 2px;
+  display: inline-block;
 }
 
 .bolt {
