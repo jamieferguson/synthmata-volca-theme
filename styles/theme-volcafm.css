@@ -211,7 +211,7 @@ a:hover, a:active, a:focus {
   position: absolute;
   top: 20px;
   bottom: 20px;
-  right: -1px;
+  right: -2px;
   width: 0;
   border-right: 2px solid rgba(255, 255, 255, 0.8);
 }
@@ -295,6 +295,7 @@ a:hover, a:active, a:focus {
   display: block;
   margin: 0 auto;
   text-align: center;
+  outline: none;
 }
 
 #saveLoadShare input {
@@ -484,6 +485,8 @@ input[type=range]::-moz-range-thumb {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 280px;
+  -webkit-box-shadow: 0 8px 4px -2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 8px 4px -2px rgba(0, 0, 0, 0.6);
 }
 
 #theme-credit {
